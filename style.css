@@ -1,0 +1,220 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-size: 13px;
+    font-family: 'Manrope', sans-serif;
+}
+
+:root{
+    --VeryDarkGrayishBlue: hsl(217, 19%, 35%);
+    --DesaturatedDarkBlue: hsl(214, 17%, 51%);
+    --GrayishBlue: hsl(212, 23%, 69%);
+    --LightGrayishBlue: hsl(210, 46%, 95%);
+}
+
+body{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--LightGrayishBlue);
+}
+
+#card{
+   position: relative;
+   width: 660px;
+   height: auto;
+   display: flex;
+   border-radius: 15px;
+   margin: 20px;
+   box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+}
+
+.table{
+    border-bottom-left-radius: 15px;
+    border-top-left-radius: 15px;
+}
+
+.pro-info{
+    position: absolute;
+    width: 424px;
+    background-color: hsl(0, 0%, 100%);
+    height: 270px;
+    left: 235px;
+    padding: 30px;
+    border-bottom-right-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+.pro-info p:nth-child(1){
+    font-weight: 700;
+    font-size: 20px;
+    color: var(--VeryDarkGrayishBlue);
+    text-align: left;
+}
+
+.pro-info p:nth-child(2){
+    text-align: left;
+    line-height: 22px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: var(--DesaturatedDarkBlue);
+}
+
+.profile{
+    position: relative;
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.pro-details{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pro-details>img{
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+button{
+    border-style: none;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    transition: .3s;
+}
+
+button:hover{
+    cursor: pointer;
+    background-color: var(--GrayishBlue);
+
+}
+
+.name{
+    color: var(--VeryDarkGrayishBlue);
+}
+
+.date{
+    line-height: 25px;
+    color: var(--GrayishBlue);
+}
+
+.share-list {
+    display: none; 
+    position: absolute;
+    top: -60px; 
+    left: 95%;
+    transform: translateX(-50%);
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 15px 10px;
+    width: 220px;
+    background: var(--VeryDarkGrayishBlue);
+    border-radius: 10px;
+    z-index: 1;
+}
+
+.share-list::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border: 13px solid transparent;
+    border-top-color: var(--VeryDarkGrayishBlue);
+    border-bottom: 0;
+    margin-left: -13px;
+    margin-bottom: -13px;
+}
+
+
+.share-list>span{
+   font-size: 10px;
+   text-transform: uppercase;
+   color: var(--GrayishBlue);
+   letter-spacing: 5px;
+}
+
+.display{
+    display: flex;
+}
+
+
+@media (max-width: 768px) {
+
+    body{
+        display: flex;
+        flex-direction: column;
+        justify-content: normal;
+    }
+
+    #card{
+        width: 320px;
+        height: 512px;
+        flex-direction: column;
+    }
+
+    .table{
+        width: 100%;
+        border-top-right-radius: 15px;
+        border-bottom-left-radius: 0px;  
+    }
+
+    .pro-info{
+        position: absolute;
+        width: 100%;
+        top: 220px;
+        height: 290px;
+        left: 0px;
+        padding: 30px 30px 0px 30px;
+        border-top-right-radius: 0px;
+        border-bottom-left-radius: 15px;
+    }
+
+    .pro-info p:nth-child(1){
+        font-size: 15px;
+        word-spacing: 1px;
+    }
+
+    .pro-info p:nth-child(2){
+        word-spacing: 2px;
+    }
+
+    .profile{
+        position: relative;
+        margin-top: 20px;
+    }
+
+    .share-list {
+    display: none; 
+    top: -5px; 
+    left: 50%;
+    height: 65px;
+    padding: 15px 90px 15px 10px;
+    width: 320px;
+    border-top-right-radius: 0px;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    }
+
+    .share-list::after {
+    display: none;
+    }
+
+    button{
+        z-index: 2;
+    }
+
+    .display{
+        display: flex;
+    }
+
+}
